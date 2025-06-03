@@ -19,8 +19,8 @@ O pipeline consiste nas seguintes etapas principais:
 - **Fonte principal:** S2ID (Sistema Integrado de Informações sobre Desastres)
 - **Complemento:** Dados sintéticos gerados artificialmente com base em padrões reais, a fim de balancear as classes e ampliar a base.
 - **Pré-processamento:**
-  - Seleção de 6 variáveis numéricas com maior impacto em desastres naturais
-  - Normalização Utilizada: **`StandardScaler`
+  - **Seleção de 6 variáveis numéricas com maior impacto em desastres naturais**
+  - **Normalização Utilizada:**`StandardScaler`
   - **Justificativa da Escolha:**
     - Reduz o impacto de variáveis com escalas muito diferentes
     - Facilita a interpretação de gráficos e distribuições dos dados
