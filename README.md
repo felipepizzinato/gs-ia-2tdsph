@@ -126,7 +126,7 @@ testar_manual(entrada)
 
 | Categoria           | Ferramentas/Bibliotecas                  |
 | ------------------- | ---------------------------------------- |
-| 🤖 Machine Learning | `scikit-learn`, `RandomForestClassifier` |
+| 🤖 Machine Learning | `scikit-learn`, `RandomForestClassifier`, `StandardScaler` |
 | 📊 Dados            | `pandas`, `numpy`                        |
 | 🎨 Visualização     | `matplotlib`, `seaborn`                  |
 
