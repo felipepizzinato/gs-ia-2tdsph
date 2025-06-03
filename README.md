@@ -4,7 +4,9 @@
 
 Em contextos de desastres naturais, é essencial determinar a prioridade de atendimento com base em dados objetivos sobre os danos causados. Contudo, essa classificação muitas vezes é feita manualmente, o que pode causar atrasos e inconsistências.
 
-Este projeto propõe um classificador automático que, com base em dados como número de mortos, desalojados, danos em moradias e infraestrutura, consegue prever se uma ocorrência deve ser tratada com **alta**, **média** ou **baixa prioridade**.
+Este projeto propõe um classificador automatizado de prioridade que, com base em dados como número de mortos, desalojados, danos em moradias e infraestrutura, consegue prever se uma ocorrência deve ser tratada com **alta**, **média** ou **baixa prioridade**.
+
+Boa parte da base de dados utilizada foi retirada do **S2ID - Sistema Integrado de Informações sobre Desastres**, sendo posteriormente expandida com amostras artificiais realistas para fins de balanceamento e escalabilidade.
 
 ---
 
@@ -12,20 +14,36 @@ Este projeto propõe um classificador automático que, com base em dados como n�
 
 O pipeline consiste nas seguintes etapas principais:
 
-### 1. 📊 Coleta e Normalização dos Dados
+### 1. 📊 Coleta e Preparação dos Dados
 
-* **Fonte:** Base de dados construída a partir de registros reais do S2ID (Sistema Integrado de Informações sobre Desastres) e complementada com amostras artificiais realistas.
-* **Normalização:** `StandardScaler` do Scikit-learn aplicado às variáveis numéricas.
+- **Fonte principal:** S2ID (Sistema Integrado de Informações sobre Desastres)
+- **Complemento:** Dados sintéticos gerados artificialmente com base em padrões reais, a fim de balancear as classes e ampliar a base.
+- **Pré-processamento:**
+  - Seleção de 6 variáveis numéricas com maior impacto em desastres naturais
+  - Normalização Utilizada: **`StandardScaler`
+  - **Justificativa da Escolha:**
+    - Reduz o impacto de variáveis com escalas muito diferentes
+    - Facilita a interpretação de gráficos e distribuições dos dados
+    - Garante compatibilidade com outros algoritmos que dependem fortemente da escala
+    - Ajuda na estabilidade numérica e convergência de modelos em treinamentos futuros
+    - Boa prática em pipelines de Machine Learning, mantendo consistência e organização
 
-### 2. 🤖 Treinamento do Modelo
+### 2. 🌲 Treinamento do Modelo de Machine Learning
 
-* **Algoritmo:** `RandomForestClassifier`
-* **Divisão dos dados:** 80% treino / 20% teste
-* **Acurácia obtida:** \~0.90 (com variança dependendo da aleatoriedade dos dados)
+- **Algoritmo Utilizado:** `RandomForestClassifier` 
+- **Justificativa da Escolha:**
+  - Robusto contra overfitting mesmo com ruído ou dados parcialmente desbalanceados
+  - Capaz de lidar bem com variáveis numéricas contínuas
+  - Não exige normalização extrema, mas ainda se beneficia dela
+  - Fácil de interpretar e ajustar hiperparâmetros
+  - Excelente desempenho em classificações multiclasses com dados tabulares
+- **Divisão dos dados:** 80% para treino / 20% para teste
+- **Acurácia média obtida:** ~0.90 no conjunto de teste
 
-### 3. 💡 Predição manual
+### 3. 🔍 Predição Manual Interativa
 
-* É possível passar dados de entrada manualmente e obter a prioridade prevista.
+- Foi implementada uma função para simular a entrada de uma nova ocorrência (com dados reais ou estimados).
+- O usuário pode inserir os dados manualmente e obter a prioridade de resposta automaticamente.
 
 ---
 
@@ -127,12 +145,11 @@ testar_manual(entrada)
 ## 🤔 Possíveis Melhorias Futuras
 
 * Explorar modelos supervisionados mais robustos (XGBoost, SVM)
-* Testar normalizadores alternativos (MinMaxScaler)
 * Implantar via API para uso em tempo real
 * Utilizar dados reais (ex: Defesa Civil, INMET) para refino
 
 ---
 
-## 📍 Pitch e Demonstração
+## 📍 Pitch 
 
 ainda vou realizar
