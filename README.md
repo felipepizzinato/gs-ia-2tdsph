@@ -146,7 +146,7 @@ testar_manual(entrada)
 
 * Explorar modelos supervisionados mais robustos (XGBoost, SVM)
 * Implantar via API para uso em tempo real
-* Utilizar dados reais (ex: Defesa Civil, INMET) para refino
+* Utilizar dados 100% reais
 
 ---
 
