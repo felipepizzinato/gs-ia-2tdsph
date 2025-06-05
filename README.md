@@ -150,6 +150,16 @@ testar_manual(entrada)
 
 ---
 
+## 📝 Conclusão
+
+Com base nos resultados obtidos, o classificador de prioridade desenvolvido para as ocorrências de desastres naturais mostrou-se altamente eficaz. O modelo alcançou uma acurácia de 90% no conjunto de teste, o que indica que ele é capaz de classificar corretamente as ocorrências de alta, média e baixa prioridade com uma boa margem de confiança.
+
+Além disso, a classificação equilibrada entre as classes (Alta, Média e Baixa prioridade) demonstrou que o modelo é capaz de lidar bem com dados desbalanceados e fornecer previsões precisas para todas as categorias de prioridade, sem viés para nenhuma delas.
+
+A implementação do RandomForestClassifier, junto com a normalização dos dados utilizando o StandardScaler, foi fundamental para alcançar um bom desempenho, visto que o modelo se beneficiou da padronização das variáveis, especialmente em um conjunto de dados com características tão diversas. A utilização do RandomForest também garantiu robustez contra overfitting e alta interpretabilidade dos resultados.
+
+---
+
 ## 📍 Pitch 
 
 ainda vou realizar
