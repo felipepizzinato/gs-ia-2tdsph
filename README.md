@@ -126,8 +126,8 @@ testar_manual(entrada)
 
 | Categoria           | Ferramentas/Bibliotecas                  |
 | ------------------- | ---------------------------------------- |
-| 🤖 Machine Learning | `scikit-learn`, `RandomForestClassifier`, `StandardScaler` |
-| 📊 Dados            | `pandas`, `numpy`                        |
+| 🤖 Machine Learning |  `RandomForestClassifier` |
+| 📊 Dados            | `pandas`, `StandardScaler`         |
 | 🎨 Visualização     | `matplotlib`, `seaborn`                  |
 
 ---
@@ -162,4 +162,4 @@ A implementação do RandomForestClassifier, junto com a normalização dos dado
 
 ## 📍 Pitch 
 
-ainda vou realizar
+[YouTube](https://youtu.be/BpL4GdLH_Ms)
